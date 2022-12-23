@@ -8,6 +8,7 @@ const userSchema = new Schema(
       unique: true,
       required: true,
       max_length: 50,
+      trim: true,
     },
     email: {
       type: String,
@@ -20,7 +21,7 @@ const userSchema = new Schema(
         message: props => `${props.value} is not a valid email.`
       },
     },
-    thoughts: [thoughtsSchema],
+    thoughts: [thoughtSchema],
     friends: [userSchema],
   },
   {
