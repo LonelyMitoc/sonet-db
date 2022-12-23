@@ -1,5 +1,6 @@
 const router = require('express').Router();
-// Need to bring in function from controllers
+
+//CRUD from the controllers
 const {
   getUsers,
   getSingleUser,
