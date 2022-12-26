@@ -30,8 +30,19 @@ async function createUser(req, res) {
   }
 };
 
+async function deleteUser(req, res) {
+  try {
+    const user = await User.findOneAndRemove(req.params.id);
+    return res.json(user);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json(err);
+  }
+};
+
 module.exports = {
   getUsers,
   getSingleUser,
   createUser,
+  deleteUser,
 };
